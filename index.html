@@ -50,6 +50,7 @@
                 <a href="#skills" class="text-gray-600 hover:text-teal-600 transition-colors">Skills</a>
                 <a href="#projects" class="text-gray-600 hover:text-teal-600 transition-colors">Projects</a>
                 <a href="#education" class="text-gray-600 hover:text-teal-600 transition-colors">Education</a>
+                <a href="#download" class="text-gray-600 hover:text-teal-600 transition-colors">Download</a>
             </div>
         </nav>
     </header>
@@ -72,6 +73,7 @@
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.206v4.248H8.014V8h2.557v1.17h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.664zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.14-.925 2.065-2.065 2.065zm1.336 8.905H4V8h2.673v8.338zM17.662 0H2.338C1.048 0 0 1.048 0 2.338v15.324C0 18.952 1.048 20 2.338 20h15.324C18.952 20 20 18.952 20 17.662V2.338C20 1.048 18.952 0 17.662 0z" clip-rule="evenodd"></path></svg>
                     <span>LinkedIn</span>
                 </a>
+                <a href="assets/Owen_Morris_Resume.pdf" download class="bg-teal-500 text-white py-2 px-4 rounded-full text-sm transition-colors hover:bg-teal-600">Download PDF</a>
             </div>
         </section>
 
@@ -126,7 +128,8 @@
         <section id="projects" class="mb-20">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-teal-500 pb-2">Featured Projects</h2>
             <p class="text-gray-700 mb-8 text-center">Here are a few personal projects I've built to explore new technologies and solve interesting problems. They demonstrate my ability to work with various modern frameworks and APIs.</p>
-            <div class="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:-translate-y-1 flex flex-col">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:-translate-y-1 flex flex-col">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">DogWalker</h3>
                     <p class="text-gray-700 mb-4 flex-grow">A .NET Web API featuring a CQRS and Repository pattern, with frontends developed in both React and Blazor WASM.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -165,6 +168,7 @@
                         <span>View Code</span>
                     </a>
                 </div>
+            </div>
         </section>
 
         <section id="education" class="text-center">
@@ -173,6 +177,18 @@
                 <h3 class="text-xl font-semibold text-gray-900">Indiana University of Pennsylvania</h3>
                 <p class="text-gray-700">B.S. Computer Science, Software Engineering (2021)</p>
                 <p class="text-gray-500 text-sm mt-1">ACM Club Member</p>
+            </div>
+        </section>
+
+        <section id="download" class="mb-20 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-teal-500 pb-2 inline-block">Download</h2>
+            <div class="bg-white rounded-lg shadow-md p-6 max-w-xl mx-auto">
+                <p class="text-gray-700 mb-4">Get a one-page PDF version of my resume for easy sharing.</p>
+                <a href="assets/Owen_Morris_Resume.pdf" download class="inline-flex items-center bg-teal-500 text-white py-2 px-5 rounded-full text-sm font-medium transition-colors hover:bg-teal-600">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 14a1 1 0 011-1h3v-3a1 1 0 112 0v3h3a1 1 0 110 2H9v3a1 1 0 11-2 0v-3H4a1 1 0 01-1-1zm7-12a1 1 0 011 1v7.586l1.293-1.293a1 1 0 111.414 1.414l-3.293 3.293a1 1 0 01-1.414 0L5.707 10.707a1 1 0 011.414-1.414L8.414 10.586V3a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+                    Download PDF
+                </a>
+                <p class="text-gray-500 text-xs mt-3">File path: /assets/Owen_Morris_Resume.pdf</p>
             </div>
         </section>
     </main>
@@ -185,62 +201,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const etlCtx = document.getElementById('etlChart').getContext('2d');
-            new Chart(etlCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Before Optimization', 'After Optimization'],
-                    datasets: [{
-                        label: 'Processing Time (minutes)',
-                        data: [18 * 60, 20],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(20, 184, 166, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(20, 184, 166, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Time in Minutes'
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.dataset.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    if (context.parsed.y !== null) {
-                                        if(context.dataIndex === 0) {
-                                            label += '1080 minutes (18 hours)';
-                                        } else {
-                                            label += '20 minutes';
-                                        }
-                                    }
-                                    return label;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
             const skillsData = {
                 languages: {
                     label: "Languages",
